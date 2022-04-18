@@ -7,10 +7,11 @@ function App() {
   // let, const는 scope가 함수 단위가 아니라 블록 단위다.
   const name = '리액트';
   return (
-    <>
-      <h1>{name} 안녕!</h1>
-      <h2>잘 작동하니?</h2>
-    </>
+    <div>
+      {name === '리액트' && 
+        <h1>리액트 입니다.</h1>
+      }
+    </div>
   );
 }
 
