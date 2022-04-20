@@ -1,1 +1,1 @@
-# React_handling_skills
+# 리액트 교재 공부!
