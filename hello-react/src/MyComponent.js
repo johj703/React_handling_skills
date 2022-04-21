@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const MyComponent = ({ name, children }) => {
     return (
         <div>
@@ -11,6 +13,10 @@ const MyComponent = ({ name, children }) => {
 // 만약 함수의 파라미터가 객체라면 그 값을 바로 비구조화해서 사용하는 것이다.
 MyComponent.defaultProps = {
     name: '기본 이름'
+};
+
+MyComponent.propTypes = {
+    name: PropTypes.string
 };
 
 export default MyComponent;
