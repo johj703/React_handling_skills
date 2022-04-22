@@ -1,16 +1,10 @@
 import { Component } from 'react';
 
 class Counter extends Component {
-    // 컴포넌트에 state를 설정할 때는 constructor 메서드를 작성해서 설정!
-    // 이 함수가 호출되면 현재 클래스형 컴포넌트가 상속받고 있는 리액트의 Component클래스가 지닌 생성자 함수를 호출해 준다.
-    constructor(props) {
-        super(props);
-        // state의 초기값 설정하기
-        this.state = {
-            number: 0,
-            fixedNumber: 0
-        };
-    }
+    state = {
+        number: 0,
+        fixedNumber: 0
+    };
     render(){
         const { number, fixedNumber } = this.state; // state를 조회할 때는 this.state로 조회한다.
         return (
