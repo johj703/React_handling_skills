@@ -16,7 +16,16 @@ class Counter extends Component {
                     // 이벤트로 설정할 함수를 넣어 줄 때는 화살표 함수 문법을 사용하여 넣어 주어야 한다.
                     onClick={() => {
                         // this.setState를 사용하여 state에 새로운 값을 넣을 수 있다.
-                        this.setState({ number: number + 1});
+                        this.setState(prevState => {
+                            return {
+                                number: prevState.number + 1
+                            };
+                        });
+                        // 위 코드와 아래 코드는 완전히 똑같은 기능을 한다.
+                        // 아래 코드는 함수에서 바로 객체를 반환한다는 의미다.
+                        this.setState(prevState => ({
+                            number: prevState.number + 1
+                        }));
                     }}
                 >
                     +1
