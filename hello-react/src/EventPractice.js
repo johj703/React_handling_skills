@@ -7,6 +7,7 @@ class EventPractice extends Component {
         message: ''
     }
 
+    // 핵심!! 객체 안에서 key를 []로 감싸면 그 안에 넣은 레퍼런스가 가리키는 실제 값이 key 값으로 사용된다.
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
