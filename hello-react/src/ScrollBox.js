@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 class ScrollBox extends Component {
 
-    scrollBottom = () => {
+    scrollToBottom = () => {
         const { scrollHeight, clientHeight } = this.box;
         /*
             앞 코드에는 비구조화 할당 문법을 사용.
