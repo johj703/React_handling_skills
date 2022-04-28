@@ -5,8 +5,11 @@ const Info = () => {
     const [nickname, setNickname] = useState('');
     // useEffect = 리액트 컴포넌트가 렌더링 될 때마다 특정 작업을 수행하도록 설정할 수 있는 Hook이다.
     useEffect(() => {
-        console.log(name);
-        }, [name]);
+        console.log('effect');
+        return () => {
+            console.log('unmount');
+        };
+    }, []);
 
     const onChangeName = e => {
         setName(e.target.value);
