@@ -1,6 +1,7 @@
 import { useInputs } from './useInputs';
 
 const Info = () => {
+    // 커스텀 Hook(useInput)만들고 적용!
     const [state, onChange] = useInputs({
         name: '',
         nickname: ''
