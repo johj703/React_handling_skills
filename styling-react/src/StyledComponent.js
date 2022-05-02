@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Box = styled.div`
     /* props로 넣어 준 값을 직접 전달해 줄 수 있습니다. */
+    // 스타일에서 props 조회하기
     background: ${props => props.color || 'blue'};
     padding: 1rem;
     display: flex;
