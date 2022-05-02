@@ -1,0 +1,9 @@
+`hello ${{foo: 'bar' }} ${() => 'world'}!`
+// 결과: "hello [object Object] () => 'world'!"
+// 템플릿에 객체를 넣거나 함수를 넣으면 형태를 잃어버리게 된다.
+
+// Tagged 템플릿 리터럴을 사용하면 템플릿 사이사이에 들어가는 자바스크립트 객체나 함수의 원본 값을 그대로 추출할 수 있다.
+function tagged(...args){
+    console.log(args);
+}
+tagged`hello ${{foo: 'bar' }} ${() => 'world'}!`
