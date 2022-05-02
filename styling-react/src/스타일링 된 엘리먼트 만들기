@@ -1,0 +1,16 @@
+import styled from 'styled-components';
+
+// styled.div 뒤에 Tagged 템플릿 리터럴 문법을 통해 스타일을 넣어주면, 해당 스타일이 적용된 div로 이루어진 리택트 컴포넌트가 생성됩니다!
+const MyComponent = styled.div`
+    font-size: 2rem;
+`;
+
+// 태그의 타입을 styled 함수의 인자로 전달
+const MyInput = styled('input')`
+    background: gray;
+`
+
+// 아예 컴포넌트 형식의 값을 넣어 줍니다.
+const StyledLink = styled(Link)`
+    color: blue;
+`
