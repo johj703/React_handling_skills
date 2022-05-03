@@ -1,12 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoTemplate from "./component/TodoTemplate";
+import TodoInsert from "./component/TodoInsert";
+import TodoList from "./component/TodoList";
 
 function App() {
   return (
-    <div>
-      Todo App을 만들자!
-    </div>
+    <TodoTemplate>
+      <TodoInsert />
+      <TodoList />
+    </TodoTemplate>
   );
-}
+};
 
 export default App;
