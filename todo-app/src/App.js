@@ -2,7 +2,7 @@ import TodoTemplate from "./component/TodoTemplate";
 import TodoInsert from "./component/TodoInsert";
 import TodoList from "./component/TodoList";
 
-function App() {
+const App = () => {
   return (
     <TodoTemplate>
       <TodoInsert />
