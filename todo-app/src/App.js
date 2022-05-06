@@ -29,29 +29,21 @@ const App = () => {
         text,
         checked: false,
       };
-      setTodos(todos.concat(todo));
+      setTodos(todos => todos.concat(todo));
       nextId.current += 1; // nextId 1씩 더하기
-    },
-    [todos],
-  );
+    },[]);
 
-  const onRemove = useCallback(
-    id => {
-      setTodos(todos.filter(todo => todo.id !== id));
-    },
-    [todos],
-  );
+  const onRemove = useCallback(id => {
+      setTodos(todos => todos.filter(todo => todo.id !== id));
+    },[]);
 
-  const onToggle = useCallback(
-      id => {
-        setTodos(
+  const onToggle = useCallback(id => {
+        setTodos(todos =>
           todos.map(todo => 
             todo.id === id ? {...todo, checked: !todo.checked } : todo,
             ),
         );
-      },
-      [todos],
-  );
+      }, []);
 
   return (
     <TodoTemplate>
