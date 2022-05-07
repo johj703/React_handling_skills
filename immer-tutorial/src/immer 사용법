@@ -1,0 +1,8 @@
+import produce from 'immer';
+
+const nextState = produce(originalState, draft => {
+    // 첫 번째 파라미터(originalState) = 수정하고 싶은 상태
+    // 두 번째 파라미너(draft) = 상태를 어떻게 업데이트할지 정의하는 함수
+    // 바꾸고 싶은 값 바꾸기
+    draft.somewhere.deep.inside = 5;
+})
