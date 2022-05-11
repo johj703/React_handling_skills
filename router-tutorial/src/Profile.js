@@ -1,6 +1,8 @@
 import { withRouter } from "react-router-dom";
 import WithRouterSample from "./WithRouterSample";
 
+// withRouter를 사용하면 현재 자신을 보여 주고 있는 라우트 컴포넌트(현재 Profiles)를 기준으로 match가 전달된다.
+
 const data = {
     velopert: {
         name: '김민준',
@@ -29,4 +31,4 @@ const Profile = ({ match }) => {
     );
 };
 
-export default Profile;
+export default withRouter(Profile);

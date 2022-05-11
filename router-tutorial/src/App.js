@@ -22,10 +22,10 @@ const App = () => {
         </li>
       </ul>
       <hr />
-      <Route path="/" component={Home} exact={true} />
-      <Route path={['/about', '/info']} component={About} />
-      <Route path="/profiles" component={Profiles} />
-      <Route path="/history" component={HistorySample} />
+        <Route path="/" component={Home} exact={true} />
+        <Route path={['/about', '/info']} component={About} />
+        <Route path="/profiles" component={Profiles} />
+        <Route path="/history" component={HistorySample} />
     </div>
   );
 };
