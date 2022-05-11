@@ -1,5 +1,7 @@
 import { Component } from 'react';
 
+// history 객체 = 라우트로 사용된 컴포넌트에 match, location과 함께 전달되는 props 중 하나로,
+// 이 객체를 통해 컴포넌트 내에 구현하는 메서드에서 라우터 API를 호출할 수 있다.
 class HistorySample extends Component {
     // 뒤로 가기
     handleGoBack = () => {
