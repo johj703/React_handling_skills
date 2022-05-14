@@ -21,7 +21,8 @@ const sampleArticle = {
     description: '내용',
     url: 'https://google.com',
     urlToImage: 'https://via.placeholder.com/160',
-};
+}
+
 
 const NewsList = () => {
     const [articles, setArticles] = useState(null);
@@ -33,7 +34,7 @@ const NewsList = () => {
             setLoading(true);
             try {
                 const response = await axios.get(
-                    'https://newsapi.org/v2/top-headlines?contry=kr&apikey=2863d495030043e9b67b28b25340bebf',
+                    'https://newsapi.org/v2/top-headlines?country=kr&apikey=2863d495030043e9b67b28b25340bebf',
                 );
                 setArticles(response.data.articles);
             } catch (e) {
@@ -46,7 +47,7 @@ const NewsList = () => {
 
     // 대기 중일 때
     if (loading) {
-        return <NewsListBlock>대기 중...</NewsListBlock>
+        return <NewsListBlock>대기 중...</NewsListBlock>;
     }
     // 아직 articles 값이 설정되지 않았을 때
     if (!articles) {
@@ -54,10 +55,10 @@ const NewsList = () => {
     }
 
     // articles 값이 유효할 때
-    return(
+    return (
         <NewsListBlock>
             {articles.map(article => (
-            <NewsItem key={article.url} article={sampleArticle} />
+                <NewsItem key={article.url} article={article} />
             ))}
         </NewsListBlock>
     );
