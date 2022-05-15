@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 // categories 배열 안에 name과 text 값이 들어가 있는 객체들을 넣어 주어서 한글로 된 카테고리와 실제 카테고리 값을 연결시켜 줬음!
 // name은 실제 카테고리 값을 가리키고, text 값은 렌더링할 때 사용할 한글 카테고리를 가리킨다!
 const categories = [
@@ -43,7 +44,7 @@ const CategoriesBlock = styled.div`
     }
 `;
 
-const Category = styled.div`
+const Category = styled.div(NavLink)`
     font-size: 1.125rem;
     cursor: pointer;
     white-space: pre;
@@ -55,28 +56,28 @@ const Category = styled.div`
         color: #495057
     }
 
-    ${props =>
-        props.active && css`
+    &.active {
         font-weight: 600;
         border-bottom: 2px solid #22b8cf;
         color: #22b8cf;
         &:hover {
             color: #3bc9db;
         }
-    `}
+    }
 
     & + & {
         margin-top: 1rem;
     }
 `;
-const Categories = ({ onSelect, category }) => {
+const Categories = () => {
     return (
         <CategoriesBlock>
             {categories.map(c => (
                 <Category
                     key={c.name}
-                    active={category === c.name}
-                    onClick={() => onSelect(c.name)}
+                    activeClassName="active"
+                    exact={c.name === 'all'}
+                    to={c.name === 'all' ? '/' : `/${c.name}`}
                 >
                     {c.text}
                 </Category>
