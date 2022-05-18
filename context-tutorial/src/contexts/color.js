@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 const ColorContext = createContext({
     // createContext의 기본 값은 실제 Provider의 value에 넣는 객체의 형태와 일치시켜 주는 것이 좋다
     // 그렇게 하면, Context 코드를 볼 때, 내부 값이 어떻게 구성되어 있는지 파악하기 쉽고, 실수로 Provider를
-    // 사용하지 않았을 대 리액트 어플리케이션에서 에러가 발생하지 않는다ㅏ.
+    // 사용하지 않았을 대 리액트 어플리케이션에서 에러가 발생하지 않는다.
     state: { color: 'black', subcolor: 'red' },
     actions: {
         setColor: () => {},
