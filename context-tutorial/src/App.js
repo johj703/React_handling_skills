@@ -6,7 +6,7 @@ import ColorContext from './contexts/color';
 // 명시하지 않았다면, 이 기본값을 사용하지 않기 때문에 오류가 발생한다.
 const App = () => {
   return (
-    <ColorContext.Provider value={{ color: 'red' }}>
+    <ColorContext.Provider>
       <div>
         <ColorBox />
       </div>
