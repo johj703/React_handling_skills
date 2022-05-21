@@ -118,6 +118,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var divToggle = document.querySelector('.toggle');
 var counter = document.querySelector('h1');
 var btnIncrease = document.querySelector('#increase');
@@ -145,13 +151,40 @@ var decrease = function decrease() {
   return {
     type: DECREASE
   };
-}; // 이 프로젝트에서 사용할 초기값을 정의한다. 초기값의 형태는 자유(숫자, 문자열, 객체 모두 가능)
+}; // 이 프로젝트에서 사용할 초기값을 정의한다. 초기값의 형태는 자유(숫자, 문자열, 객체 모두 가능)다.
 
 
 var initialState = {
   toggle: false,
   counter: 0
-};
+}; // 리듀서는 변화를 일으키는 함수다. 함수의 파라미터로는 state와 action 값을 받아 온다.
+// state가 undefined일 때는, initialState를 기본값으로 사용
+
+function reducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  // action.type에 따라 다른 작업을 처리한다.
+  switch (action.type) {
+    case TOGGLE_SWITCH:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        toggle: !state.toggle
+      });
+
+    case INCREASE:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        toggle: state.counter + action.difference
+      });
+
+    case DECREASE:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        toggle: state.counter - 1
+      });
+
+    default:
+      return state;
+  }
+}
 },{}],"../../../Users/조현준/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
