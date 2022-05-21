@@ -1007,8 +1007,23 @@ var render = function render() {
 // 업데이트 될 때마다 호출된다.
 
 
-render();
+render(); // 액션을 발생시키는 것을 디스패치라고 한다. 디스패치를 할 때는 스토어의 내장 함수 dispatch를 사용한다.
+// 파라미터는 액션 객체를 넣어 주면 된다.
+// 이벤트 함수 내부에서는 dispatch 함수를 사용하여 액션을 스토어에게 전달해 줄 것이다.
+
 store.subscribe(render);
+
+divToggle.onClick = function () {
+  store.dispatch(toggleSwitch());
+};
+
+btnIncrease.onClick = function () {
+  store.dispatch(increase(1));
+};
+
+btnDecrease.onClick = function () {
+  store.dispatch(decrease());
+};
 },{"redux":"node_modules/redux/es/redux.js"}],"../../../Users/조현준/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
