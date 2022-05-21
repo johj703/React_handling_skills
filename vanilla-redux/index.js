@@ -13,3 +13,9 @@ const DECREASE = 'DECREASE';
 const toggle_switch = () => ({ type: TOGGLE_SWITCH });
 const increase = difference => ({ type: INCREASE, difference });
 const decrease = () => ({ type: DECREASE });
+
+// 이 프로젝트에서 사용할 초기값을 정의한다. 초기값의 형태는 자유(숫자, 문자열, 객체 모두 가능)
+const initialState = {
+    toggle: false,
+    counter: 0
+};

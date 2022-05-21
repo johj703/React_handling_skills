@@ -145,6 +145,12 @@ var decrease = function decrease() {
   return {
     type: DECREASE
   };
+}; // 이 프로젝트에서 사용할 초기값을 정의한다. 초기값의 형태는 자유(숫자, 문자열, 객체 모두 가능)
+
+
+var initialState = {
+  toggle: false,
+  counter: 0
 };
 },{}],"../../../Users/조현준/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
