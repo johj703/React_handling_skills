@@ -121,7 +121,31 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var divToggle = document.querySelector('.toggle');
 var counter = document.querySelector('h1');
 var btnIncrease = document.querySelector('#increase');
-var btnDecrease = document.querySelector('#decrease');
+var btnDecrease = document.querySelector('#decrease'); // 프로젝트의 상태에 변화를 일으키는 것을 액션이라고 한다.
+// 액션 이름은 문자열 형태로, 주로 대문자로 작성하며 액션 이름은 고유해야 한다.
+
+var TOGGLE_SWITCH = 'TOGGLE_SWITCH';
+var INCREASE = 'INCREASE';
+var DECREASE = 'DECREASE'; // 액션 객체는 type 값을 반드시 갖고 있어야 하며, 그 외에 추후 상태를 업데이트할 때 참고하고 싶은 값은 마음대로 넣을 수 있다.
+
+var toggle_switch = function toggle_switch() {
+  return {
+    type: TOGGLE_SWITCH
+  };
+};
+
+var increase = function increase(difference) {
+  return {
+    type: INCREASE,
+    difference: difference
+  };
+};
+
+var decrease = function decrease() {
+  return {
+    type: DECREASE
+  };
+};
 },{}],"../../../Users/조현준/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
