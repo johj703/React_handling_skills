@@ -986,7 +986,8 @@ function reducer() {
   }
 }
 
-var store = (0, _redux.createStore)(reducer);
+var store = (0, _redux.createStore)(reducer); // render 함수는 상태가 업데이트될 때마다 호출되며, 리액트의 render 함수와는 다르게 이미 html을 사용하여
+// 만들어진 UI의 속성을 상태에 따라 변경해 준다.
 
 var render = function render() {
   var state = store.getState(); // 현재 상태를 불러온다.
@@ -1000,9 +1001,14 @@ var render = function render() {
 
 
   counter.innerText = state.counter;
-};
+}; // 스토어의 상태가 바뀔 때마다 방금 만든 render 함수가 호출되도록 해줄 것이다.
+// 이 작업은 스토으의 내장 함수 subscribe를 사용하여 수행할 수 있다.
+// subscribe 함수의 파라미터로는 함수 형태의 값을 전달해 준다. 이렇게 전달된 함수는 추후 액션이 발생하여 상태가
+// 업데이트 될 때마다 호출된다.
+
 
 render();
+store.subscribe(render);
 },{"redux":"node_modules/redux/es/redux.js"}],"../../../Users/조현준/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
