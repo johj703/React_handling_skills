@@ -987,6 +987,22 @@ function reducer() {
 }
 
 var store = (0, _redux.createStore)(reducer);
+
+var render = function render() {
+  var state = store.getState(); // 현재 상태를 불러온다.
+  // 토글 처리
+
+  if (state.toggle) {
+    divToggle.classList.add('active');
+  } else {
+    divToggle.classList.remove('active');
+  } // 카운터 처리
+
+
+  counter.innerText = state.counter;
+};
+
+render();
 },{"redux":"node_modules/redux/es/redux.js"}],"../../../Users/조현준/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
