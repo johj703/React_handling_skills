@@ -9,6 +9,8 @@ export const changeInput = input = ({
 });
 
 let id = 3; // insert가 호출될 때마다 1씩 더해진다.
+// id 값이 3인 이유는 다음 초기 상태를 작성할 때, todo 객체 두 개를 사전에 미리 넣어 둘 것이기 때문이고,
+// 그 다음에 새로 추가될 항목의 id가 3이기 때문이다.
 export const insert = text = ({
     type: INSERT,
     todo: {
